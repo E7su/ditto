@@ -47,10 +47,12 @@ for host_info in uniq_host_info:
     process = subprocess.Popen(["nslookup", hostname], stdout=subprocess.PIPE)
     output = process.communicate()[0].split('\n')
     ip_arr = []
+          
     for data in output:
         if 'Address' in data:
-            ip_arr.append(data.replace('Address: ', ''))
+            ip_arr.append(data.replace('Address: ', ''))   # 127.0.0.1
     ip_arr.pop(0)
+
     for ip in ip_arr:
         str_counter += 1
         port = host_info[1]
