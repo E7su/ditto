@@ -55,9 +55,7 @@ for host_info in uniq_host_info:
 
     for ip in ip_arr:
         str_counter += 1
-        port = host_info[1]
-        port = port[:-1]
-        port = str(port)
+        port = str(host_info[1])
         ip_port_host = ip + ':' + port + '/' + hostname
         print ip_port_host  # 127.0.0.1:8080/totoro
 
